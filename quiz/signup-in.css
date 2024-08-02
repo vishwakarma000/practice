@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    max-width: 80%;
+    display: flex;
+    margin: auto;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-top: 100px;
+}
+.login-page{
+    margin-left: 100px;
+    background-color: blueviolet;
+    padding: 20px ;
+    justify-content: center;
+    width: 30%;
+    
+}
+ input{
+    
+    width:93%;
+    margin: 10px 0;
+    padding: 10px ; 
+    border-radius: 9px;
+
+}
+ button{
+    border: none;
+    width:100%;
+    margin: 10px 0;
+    padding: 10px ;
+    border-radius: 9px;
+}
+
+.login-page #link-text{
+    text-align: center;
+    margin-top: 10px;
+}
+.login-page p{
+    margin: 10px 0;
+}
