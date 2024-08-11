@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>quiz start</title>
+    <link rel="stylesheet" href="quiz.css">
 </head>
-<body>
+
+<body class="dashboard question">
+    <header class="header">
+        <div class="logo">
+            <img src="assests/images/TechPaathshala_Logo.png" height="30px" width="250px">
+        </div>
+        <div class="profile">
+            <ul>
+                <li class="profile-image">
+                    <img src="assests/images/ready-png-profile.png" height="35px" width="35px"
+                        style="border-radius: 50%; border: 1px solid black;" alt="">
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <div class="question-display">
+        <h1>Question <span>1</span> of 10</h1>
+        <div class="progress-bar">
+            <!-- fill bar should be here -->
+        </div>
+        <p id="question-text"><span>1</span> .This is Question?</p>
+        <p>Supporting text</p>
+        <ol>
+            <li>
+                <input type="radio" name="ans" id="option1" value="option1"><label for="option1">option1</label>
+            </li>
+            <li>
+                <input type="radio" name="ans" id="option2" value="option2"><label for="option2">option2</label>
+            </li>
+            <li>
+                <input type="radio" name="ans" id="option3" value="option3"><label for="option3">option3</label>
+            </li>
+            <li>
+                <input type="radio" name="ans" id="option4" value="option4"><label for="option4">option4</label>
+            </li>
+
+        </ol>
+
+
+
+    <a href="#">Submit & Continue<svg width="28" height="12" viewBox="0 0 28 22" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 11L26 11M26 11L17 20M26 11L17 2" stroke="#0948B4" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </a>
     
+    </div>
+
 </body>
+
 </html>
