@@ -15,7 +15,7 @@
         </div>
         <div class="profile">
             <ul>
-                <li>Edit quizze</li> 
+                <li id="currentUser">hello user</li> 
                 <li>All quizze</li>
                 <li class="profile-image">
                     <img src="assests/images/ready-png-profile.png" height="35px" width="35px" style="border-radius: 50%; border: 1px solid black;" alt="">
@@ -58,5 +58,12 @@
         <button class="start-quiz">Start Quiz</button>
     </div>
     </div>
+    <script>
+         let currentUser = JSON.parse(localStorage.getItem("loginUser"))
+           var currentUsername= currentUser[0].name
+        //    console.log(currentUsername)
+           let printName =document.getElementById("currentUser")
+           printName.innerText = "Hello, "+ currentUsername
+    </script>
 </body> 
 </html>

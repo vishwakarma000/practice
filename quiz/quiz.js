@@ -1,4 +1,5 @@
-function submitData() {
+// for registration
+function submitData() {  
     var full_name = document.getElementById("full_name").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
@@ -32,9 +33,11 @@ function submitData() {
 
     if (password == "") {
         alert("Please enter password")
+        return false
     }
     else if (password.length <= 8) {
         alert("Enter password must be 8 digit long")
+        return false
     }
 
     let userList = JSON.parse(window.localStorage.getItem("users")) || [];
@@ -53,7 +56,39 @@ function submitData() {
         var userString = JSON.stringify(userList)
         window.localStorage.setItem("users", userString);
         alert("register Successfull")
+        window.location.href = "login.html"
         
 
     }
+}
+
+
+//for login 
+
+function login(){
+    let email = document.getElementById("email").value 
+    let password = document.getElementById("password").value 
+
+    let userList = JSON.parse(window.localStorage.getItem("users")) || [];
+
+    const validEmail = userList.some(user => user.email === email);
+    const validPassword = userList.some(user => user.password === password);
+    if(email == "" && password == ""){
+        alert("enter user name and password")
+    }
+    else{
+     if(!validEmail){                   ///success condition
+        alert("Invaild user , retry!!")
+    } else if(!validPassword){
+        alert("Password is Incorrect")
+    }else{
+        alert("success")
+        
+        // handleUser(email)
+         const existUser = userList.filter(user => user.email === email)
+        localStorage.setItem("loginUser",JSON.stringify(existUser))
+        window.location.href = "dashboard.html"
+    }
+    }
+    
 }
