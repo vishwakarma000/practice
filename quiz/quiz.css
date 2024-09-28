@@ -180,8 +180,12 @@ font-weight: bold;
 
     padding: 10px 0px;
 }
-.question-display > a{
+.question-display > #nextquestion{
     float: right;
+    font-size: 20px;
+}
+.question-display > #previousQuestion{
+    color: #909095;
     font-size: 20px;
 }
 

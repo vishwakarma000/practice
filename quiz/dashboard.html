@@ -39,31 +39,36 @@
             <h1>Catchy Line for Starting Quiz</h1>
         <p>When you're done,Review your answer and See your rank</p>
         </div>
+        <form action="">
         <div class="template-inputs">
             <div class="input-group">
                 <label for="name">Full Name<span>*</span></label><br>
-                <input type="text" class="name" id="name" placeholder="Full Name">
+                <input type="text" class="name" id="name" placeholder="Full Name" required>
             </div>
             <div class="input-group">
                 <label for="name">Email id <span>*</span></label><br>
-                <input type="text" class="email" id="email" placeholder="Email id">
+                <input type="text" class="email" id="email" placeholder="Email id" required>
             </div>
             <div class="input-group">
                 <label for="name">Contact No<span>*</span></label><br>
-                <input type="text" class="contact" id="contact" placeholder="Contact No">
+                <input type="text" class="contact" id="contact" placeholder="Contact No" required>
             </div>
             
         </div>
         <div id="start-btn">
-        <button class="start-quiz">Start Quiz</button>
-    </div>
-    </div>
-    <script>
+        <button class="start-quiz" id="quizStart" onclick="">Start Quiz</button>
+      </div>
+    </div></form>
+    <script >
+        document.getElementById("quizStart").addEventListener("click", function(){
+            window.location.href = "display_question.html";
+        });
          let currentUser = JSON.parse(localStorage.getItem("loginUser"))
            var currentUsername= currentUser[0].name
         //    console.log(currentUsername)
            let printName =document.getElementById("currentUser")
            printName.innerText = "Hello, "+ currentUsername
     </script>
+    <script src="quiz.js"></script>
 </body> 
 </html>

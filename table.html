@@ -29,6 +29,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- table created here!!!!!!!!!!!! -->
     <table id="todoTable">
@@ -43,7 +44,7 @@
     </table>
 
     <!-- form submition inputs value goes here!!!!!!!! -->
-    <form onsubmit="addTast()">
+    <form action="#">
 
         <input type="number" id="srNo" placeholder="Sr no.">
         <input type="text" id="name" placeholder="name">
@@ -51,37 +52,28 @@
         <input type="text" id="date" placeholder="date">
         <input type="text" id="by" placeholder="Give By">
         <input type="number" id="prior" placeholder="priority">
-        <button type="submit">ADD</button>
+        <button type="submit" onclick="addTask()">ADD</button>
 
     </form>
 
     <script>
         // here the static data object is create!!!!!!!!!!!!!!!!!!!!!!!!
-        let tasksList = [{ srNo: 1, name: "todo", discription: "completed", date: "27/07/2024", By: "sohil Sir", priority: 1 },
+        var tasksList = [{ srNo: 1, name: "todo", discription: "completed", date: "27/07/2024", By: "sohil Sir", priority: 1 },
         { srNo: 2, name: "resume with html ", discription: "completed", date: "27/07/2024", By: "sohil Sir", priority: 2 },
         { srNo: 3, name: "resume with html css", discription: "completed", date: "27/07/2024", By: "sohil Sir", priority: 3 },
         { srNo: 4, name: "portfolio", discription: "completed partially", date: "27/07/2024", By: "sohil Sir", priority: 2 }
         ]
         // {srNo : srTD , name : nameTd , discription : discriptionTd , date : dateTd , By : byTd ,priority : priorityTd}
-       
+
         ////// here i have created function to add inputs to table
-        function addTast() {
-            var srTD = document.getElementById("srNo").value;
-            var nameTd = document.getElementById("name").value;
-            var discriptionTd = document.getElementById("discription").value;
-            var dateTd = document.getElementById("date").value;
-            var byTd = document.getElementById("by").value;
-            var priorityTd = document.getElementById("prior").value;
-            let newTask = { srNo: srTD, name: nameTd, discription: discriptionTd, date: dateTd, By: byTd, priority: priorityTd };
-            tasksList.push(newTask);
-            tasksList.append(newTask);
+        var table = document.getElementById("todoTable");
 
-        } /////////////here the functins end
+        /////////////here the functins end
         /////loop are goes here to diplay sequencely from array 
-            function taskToTable() {
-                var table = document.getElementById("todoTable");
+        function taskToTable() {
 
-                for (let i = 0; i < tasksList.length; i++) {
+
+            for (let i = 0; i < tasksList.length; i++) {
 
 
                 //////////////down here the creeting tags tr and td in loop
@@ -121,6 +113,52 @@
         }
         window.onload = taskToTable;
 
+        function addTask() {
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+            var td4 = document.createElement("td");
+            var td5 = document.createElement("td");
+            var td6 = document.createElement("td");
+            var srTD = document.getElementById("srNo").value;
+            var nameTd = document.getElementById("name").value;
+            var discriptionTd = document.getElementById("discription").value;
+            var dateTd = document.getElementById("date").value;
+            var byTd = document.getElementById("by").value;
+            var priorityTd = document.getElementById("prior").value;
+            // var newTask = { srNo: srTD, name: nameTd, discription: discriptionTd, date: dateTd, By: byTd, priority: priorityTd };
+            td1.innerText = srTD;
+            td2.innerText = nameTd;
+            td3.innerText = discriptionTd;
+            td4.innerText = dateTd;
+            td5.innerText = byTd;
+            td6.innerText = priorityTd;
+
+            
+             if (td6 == 1) {
+                    tr.style.backgroundColor = "red";
+                } else if (td6 == 2) {
+                    tr.style.backgroundColor = "green";
+                } else if (td6 == 3) {
+                    tr.style.backgroundColor = "yellow";
+                }
+
+                else {
+                    tr.style.backgroundColor = "none";
+                }
+
+
+            tr.append(td1);
+            tr.append(td2);
+            tr.append(td3);
+            tr.append(td4);
+            tr.append(td5);
+            // tr.append(newTask);
+            table.append(tr);
+            // table.append(tr);
+            // taskToTable()
+        } 
     </script>
 </body>
 
