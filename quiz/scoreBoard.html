@@ -6,6 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>your r on score board</h1>
+    <h1>your r on score board <span id="score"></span></h1>
+    <script src="quiz.js"></script>
+    <script>
+    //   const userTests= JSON.parse(localStorage.getItem("userTests"))
+    //   document.getElementById("score").innerText = userTests[0].score;
+
+      userTests.map(value=> {
+      document.getElementById("score").innerText = value.score;
+      
+      });
+      console.log(userTests)
+    </script>
 </body>
 </html>

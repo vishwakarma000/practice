@@ -123,18 +123,33 @@ function displayQuestion (i) {
 
   
   document.getElementById("noOfQuestions").innerText = i + 1;
+  selectedRadio = document.querySelector("[name='options']:checked");
+  if(selectedRadio) {
+    selectedRadio.checked = false
+  }
+
+  //set choosed answer
+  if(choosedQuestions[questionIndex].choosedAnswer) {
+    let choosedAnswer = choosedQuestions[questionIndex].choosedAnswer;
+    choosedAnswer = choosedAnswer.replaceAll("'", "\\'");
+    document.querySelector("[name='options'][value='" + choosedAnswer + "']").checked = true;
+  }
+  
+}
+function choosedAnswer(optionIndex) {
+  choosedQuestions[questionIndex]["choosedAnswer"] = choosedQuestions[questionIndex].options[optionIndex];
 }
 
 
 //function for next questions
 function next() {
   if(questionIndex == 9) {
+    Submit()
 
       return
   }
   questionIndex++;
   displayQuestion(questionIndex)
-
   
 }
 //function for previous questions
@@ -142,8 +157,39 @@ function previous() {
   if(questionIndex == 0) {
       return;
   }
-
   questionIndex--;
   displayQuestion(questionIndex)
 }
+function Submit(){
+  let score = 0;
+  for(let i = 0; i < choosedQuestions.length; i++) {
+      if(choosedQuestions[i].choosedAnswer == choosedQuestions[i].answer) {
+          score += 10;
+      }
+  }
 
+
+
+
+  let userTests = JSON.parse(localStorage.getItem("userTests")) || [];
+  let loggedInUser = JSON.parse(localStorage.getItem("loginUser"));
+
+
+  let usertest = {
+      questions: choosedQuestions,
+      score: score,
+      name: loggedInUser[0].name,
+      email: loggedInUser[0].email,
+  }
+
+  userTests.push(usertest)
+  localStorage.setItem("userTests", JSON.stringify(userTests));
+
+  window.location = "scoreBoard.html"
+}
+
+let userTests = JSON.parse(localStorage.getItem("userTests")) || [];
+  let loggedInUser = JSON.parse(localStorage.getItem("loginUser"));
+  // console.log(userTests)
+  console.log(loggedInUser[0].name)
+  console.log("hi")
