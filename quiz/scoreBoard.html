@@ -3,17 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ScoreBoard</title>
+    <link rel="stylesheet" href="quiz.css">
 </head>
-<body>
-    <h1>your r on score board <span id="score"></span></h1>
+
+<body >
+    <header class="header">
+        <div class="logo">
+            <img src="assests/images/TechPaathshala_Logo.png" height="30px" width="250px">
+        </div>
+        <div class="profile">
+            <ul>
+                <li class="profile-image">
+                    <img src="assests/images/ready-png-profile.png" height="35px" width="35px"
+                        style="border-radius: 50%; border: 1px solid black;" alt="">
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <!-- greeting text ,,, wow you rank 1st  -->
+    <div class="rank-heading">
+        <h1>Wow You Rank <span id="rank-number"></span></h1>
+        <p>Supporting text</p>
+    </div>
+ 
+    <div class="rank-top">
+        <div class="rank-image left-img"><img src="assests/images/Group 5.png" alt="2nd ranker image">
+            <div>
+                <h1>Score</h1>
+                <p id="second-rank">70</p>
+            </div>
+        </div>
+        <div class="rank-image center-img"><img src="assests/images/Group 6.png" alt="1st ranker image">
+            <div>
+              <h1>Score</h1>
+            <p id="first-rank">100</p>  
+            </div>
+            
+            
+        </div>
+        <div class="rank-image right-img"><img src="assests/images/Group 4.png" alt="3rd ranker image">
+            <div>
+                <h1>Score</h1>
+                <p id="third-rank">60</p>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="rank-botton">
+
+
+    </div>
+
+
+
+
+    
+
     <script src="quiz.js"></script>
     <script>
     //   const userTests= JSON.parse(localStorage.getItem("userTests"))
     //   document.getElementById("score").innerText = userTests[0].score;
 
       userTests.map(value=> {
-      document.getElementById("score").innerText = value.score;
+      document.getElementById("rank-number").innerText = value.score;
       
       });
       console.log(userTests)

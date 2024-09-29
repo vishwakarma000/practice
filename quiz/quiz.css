@@ -62,7 +62,7 @@
     margin: 10px 0;
 }
 
-.dashboard > header {
+.header {
     display: flex;
     justify-content: space-between;
     padding: 20px 30px ;
@@ -188,4 +188,47 @@ font-weight: bold;
     color: #909095;
     font-size: 20px;
 }
+/* scoreboard css starts here */
 
+.rank-heading{
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+}
+.rank-top{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    gap: 1.5rem;
+}
+img{
+    position: relative;
+}
+
+.rank-image  div{
+    position: absolute;
+    text-align: center;
+    top: 15rem;
+    margin-left: 4rem;
+}
+
+
+
+.left-img {
+    padding-top: 10rem;
+
+}
+.left-img  div{
+    margin-top: 6rem;
+    
+
+}
+ .right-img{            
+    padding-top: 13rem;
+
+}
+.right-img  div{
+    margin-top: 9rem;
+
+}
