@@ -14,6 +14,7 @@
         </div>
         <div class="profile">
             <ul>
+                <li id="currentUser">hello user</li> 
                 <li class="profile-image">
                     <img src="assests/images/ready-png-profile.png" height="35px" width="35px"
                         style="border-radius: 50%; border: 1px solid black;" alt="">
@@ -24,20 +25,20 @@
     </header>
     <!-- greeting text ,,, wow you rank 1st  -->
     <div class="rank-heading">
-        <h1>Wow You Rank <span id="rank-number"></span></h1>
+        <h1>Wow Your Rank is <span id="rank-number"></span></h1>
         <p>Supporting text</p>
     </div>
  
-    <div class="rank-top">
+    <div class="rank-top"> 
         <div class="rank-image left-img"><img src="assests/images/Group 5.png" alt="2nd ranker image">
             <div>
-                <h1>Score</h1>
+                <h1 id="second-rank-name">Score</h1>
                 <p id="second-rank">70</p>
             </div>
         </div>
         <div class="rank-image center-img"><img src="assests/images/Group 6.png" alt="1st ranker image">
             <div>
-              <h1>Score</h1>
+              <h1 id="first-rank-name">Score</h1>
             <p id="first-rank">100</p>  
             </div>
             
@@ -45,7 +46,7 @@
         </div>
         <div class="rank-image right-img"><img src="assests/images/Group 4.png" alt="3rd ranker image">
             <div>
-                <h1>Score</h1>
+                <h1 id="third-rank-name">Score</h1>
                 <p id="third-rank">60</p>
             </div>
             
@@ -53,9 +54,28 @@
 
     </div>
 
-    <div class="rank-botton">
-
-
+    <div class="rank-bottom">
+        <img src="assests/images/Vector 15.png" alt="">
+        <div id="abc">
+    
+    
+            <div class="name-score-display">
+                <div><h2>#<span>4</span></h2><h2 id="fourth-name">name</h2></div>
+                <h2 id="fourth-rank">100</h2>
+    
+            </div>
+            <div class="name-score-display">
+                <div><h2>#<span>5</span></h2><h2 id="fifth-name">name</h2></div>
+                <h2 id="fifth-rank" >100</h2>
+    
+            </div>
+            <div class="name-score-display">
+                <div><h2>#<span>6</span></h2><h2 id="sixth-name">name</h2></div>
+                <h2 id="sixth-rank">100</h2>
+    
+            </div>
+        </div>
+    
     </div>
 
 
@@ -68,11 +88,16 @@
     //   const userTests= JSON.parse(localStorage.getItem("userTests"))
     //   document.getElementById("score").innerText = userTests[0].score;
 
-      userTests.map(value=> {
-      document.getElementById("rank-number").innerText = value.score;
+    //   userTests.map(value=> {
+    //   document.getElementById("rank-number").innerText = value.score;
       
-      });
-      console.log(userTests)
+    //   });
+      let currentUser = JSON.parse(localStorage.getItem("loginUser"))
+           var currentUsername= currentUser[0].name
+        //    console.log(currentUsername)
+           let printName =document.getElementById("currentUser")
+           printName.innerText = "Hello, "+ currentUsername
+    //   console.log(userTests)
     </script>
 </body>
 </html>

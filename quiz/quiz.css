@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-
+ 
 }
 .login-signup{
     max-width: 80%;
@@ -211,12 +211,14 @@ img{
     text-align: center;
     top: 15rem;
     margin-left: 4rem;
+    
 }
 
 
 
 .left-img {
     padding-top: 10rem;
+    
 
 }
 .left-img  div{
@@ -232,3 +234,37 @@ img{
     margin-top: 9rem;
 
 }
+.rank-top div p {
+    color: black;
+    font-size: 20px;
+}
+
+.rank-bottom{
+    top: 39rem;
+    left: 35px;
+    position: absolute;
+    
+}
+.rank-bottom #abc{
+    position: absolute;
+    top: 9rem;
+    width: 90%;
+    left: 5rem;
+}
+.name-score-display{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    margin: 20px 10px ;
+    border-radius: 9px;
+    border: none;
+    box-shadow: 0 0 15px #ececec;
+    letter-spacing: 2px;
+}
+.name-score-display div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-weight: bold;
+}
+/* 3705122124 */

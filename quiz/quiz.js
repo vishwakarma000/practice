@@ -67,7 +67,7 @@ function login() {
   const validEmail = userList.some((user) => user.email === email);
   const validPassword = userList.some((user) => user.password === password);
   if (email === adminId && password === adminPassword) {
-    window.location.href = "adminDashboard.html";
+    window.location.href = "Admin/adminDashboard.html";
   } else {
     if (email == "" && password == "") {
       alert("enter user name and password");
@@ -100,41 +100,41 @@ let questionIndex = 0;
 
 
 function startQuize() {
-    const allQuestions = JSON.parse(localStorage.getItem("questions"));
-    choosedQuestions = allQuestions.sort(() => 0.5 - Math.random()).slice(0, 10);
-    displayQuestion(questionIndex)
-    console.log(choosedQuestions)    
+  const allQuestions = JSON.parse(localStorage.getItem("questions"));
+  choosedQuestions = allQuestions.sort(() => 0.5 - Math.random()).slice(0, 10);
+  displayQuestion(questionIndex)
+  console.log(choosedQuestions)
 }
 
 
-function displayQuestion (i) {
+function displayQuestion(i) {
 
   document.getElementById("question-text").innerText = choosedQuestions[i].question;
   document.getElementById("ans1").innerText = choosedQuestions[i].options[0];
   document.getElementById("ans2").innerText = choosedQuestions[i].options[1];
   document.getElementById("ans3").innerText = choosedQuestions[i].options[2];
   document.getElementById("ans4").innerText = choosedQuestions[i].options[3];
-  
+
 
   document.getElementById("option1").value = choosedQuestions[i].options[0];
   document.getElementById("option2").value = choosedQuestions[i].options[1];
   document.getElementById("option3").value = choosedQuestions[i].options[2];
   document.getElementById("option4").value = choosedQuestions[i].options[3];
 
-  
+
   document.getElementById("noOfQuestions").innerText = i + 1;
   selectedRadio = document.querySelector("[name='options']:checked");
-  if(selectedRadio) {
+  if (selectedRadio) {
     selectedRadio.checked = false
   }
 
   //set choosed answer
-  if(choosedQuestions[questionIndex].choosedAnswer) {
+  if (choosedQuestions[questionIndex].choosedAnswer) {
     let choosedAnswer = choosedQuestions[questionIndex].choosedAnswer;
     choosedAnswer = choosedAnswer.replaceAll("'", "\\'");
     document.querySelector("[name='options'][value='" + choosedAnswer + "']").checked = true;
   }
-  
+
 }
 function choosedAnswer(optionIndex) {
   choosedQuestions[questionIndex]["choosedAnswer"] = choosedQuestions[questionIndex].options[optionIndex];
@@ -143,29 +143,29 @@ function choosedAnswer(optionIndex) {
 
 //function for next questions
 function next() {
-  if(questionIndex == 9) {
+  if (questionIndex == 9) {
     Submit()
 
-      return
+    return
   }
   questionIndex++;
   displayQuestion(questionIndex)
-  
+
 }
 //function for previous questions
 function previous() {
-  if(questionIndex == 0) {
-      return;
+  if (questionIndex == 0) {
+    return;
   }
   questionIndex--;
   displayQuestion(questionIndex)
 }
-function Submit(){
+function Submit() {
   let score = 0;
-  for(let i = 0; i < choosedQuestions.length; i++) {
-      if(choosedQuestions[i].choosedAnswer == choosedQuestions[i].answer) {
-          score += 10;
-      }
+  for (let i = 0; i < choosedQuestions.length; i++) {
+    if (choosedQuestions[i].choosedAnswer == choosedQuestions[i].answer) {
+      score += 10;
+    }
   }
 
 
@@ -176,10 +176,10 @@ function Submit(){
 
 
   let usertest = {
-      questions: choosedQuestions,
-      score: score,
-      name: loggedInUser[0].name,
-      email: loggedInUser[0].email,
+    questions: choosedQuestions,
+    score: score,
+    name: loggedInUser[0].name,
+    email: loggedInUser[0].email,
   }
 
   userTests.push(usertest)
@@ -189,7 +189,43 @@ function Submit(){
 }
 
 let userTests = JSON.parse(localStorage.getItem("userTests")) || [];
-  let loggedInUser = JSON.parse(localStorage.getItem("loginUser"));
-  // console.log(userTests)
-  console.log(loggedInUser[0].name)
-  console.log("hi")
+let loggedInUser = JSON.parse(localStorage.getItem("loginUser"));
+
+const uniqueUsers = userTests.filter((user, index, self) => 
+
+  index === self.findIndex((u) => u.email === user.email)
+
+);
+
+
+let sortedList = [...uniqueUsers]
+sortedList.sort((a, b) => b.score - a.score);
+
+
+document.getElementById("first-rank").innerText = sortedList[0].score
+
+document.getElementById("second-rank").innerText = sortedList[1].score
+
+document.getElementById("third-rank").innerText = sortedList[2].score
+
+document.getElementById("fourth-rank").innerText = sortedList[3].score
+document.getElementById("fourth-name").innerText = sortedList[3].name
+
+document.getElementById("fifth-rank").innerText = sortedList[4].score
+document.getElementById("fifth-name").innerText = sortedList[4].name
+
+document.getElementById("sixth-rank").innerText = sortedList[5].score
+document.getElementById("sixth-name").innerText = sortedList[5].name
+
+document.getElementById("first-rank-name").innerText = sortedList[0].name
+document.getElementById("second-rank-name").innerText = sortedList[1].name
+document.getElementById("third-rank-name").innerText = sortedList[2].name
+
+// userEmail = loggedInUser[0].email 
+for(i = 0; i < sortedList.length ; i++){
+if(sortedList[i].email == loggedInUser[0].email){
+  document.getElementById("rank-number").innerText = i +1 ;
+}
+
+}
+
