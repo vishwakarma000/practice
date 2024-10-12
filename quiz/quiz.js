@@ -229,3 +229,10 @@ if(sortedList[i].email == loggedInUser[0].email){
 
 }
 
+// let toggleButton = document.getElementById("toggle-button");
+
+function toggle(){
+  let element = document.getElementsByClassName("side-toggle-column")[0]
+  element.classList.toggle("toggle-style");
+
+}
