@@ -333,4 +333,26 @@ img{
     left: -303px;
 
 }
+.right-container-user {
+    padding: 2rem;
+}
+.right-container-user table,thead, td{
+    border: 2px solid;
+}
+/* .right-container-user table{
+    
+} */
 
+.right-container-user thead, td{
+    width: 15rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    
+}
+
+.right-container-user thead{
+    background-color: gainsboro;
+    text-align: center;
+}

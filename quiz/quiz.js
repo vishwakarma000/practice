@@ -190,16 +190,16 @@ function Submit() {
 
 let userTests = JSON.parse(localStorage.getItem("userTests")) || [];
 let loggedInUser = JSON.parse(localStorage.getItem("loginUser"));
-
-const uniqueUsers = userTests.filter((user, index, self) => 
+const uniqueUsers = userTests.filter((user, index, self) =>     ////SELECT THE UNIQUE USERS ONLY
 
   index === self.findIndex((u) => u.email === user.email)
 
 );
 
 
-let sortedList = [...uniqueUsers]
+let sortedList = [...uniqueUsers]         ///STUDENT WITH DESCENDING SORT
 sortedList.sort((a, b) => b.score - a.score);
+localStorage.setItem('sortedUniqueUser',JSON.stringify(sortedList))
 
 
 document.getElementById("first-rank").innerText = sortedList[0].score
