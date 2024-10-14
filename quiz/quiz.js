@@ -203,10 +203,13 @@ localStorage.setItem('sortedUniqueUser',JSON.stringify(sortedList))
 
 
 document.getElementById("first-rank").innerText = sortedList[0].score
+document.getElementById("first-rank-name").innerText = sortedList[0].name
 
 document.getElementById("second-rank").innerText = sortedList[1].score
+document.getElementById("second-rank-name").innerText = sortedList[1].name
 
 document.getElementById("third-rank").innerText = sortedList[2].score
+document.getElementById("third-rank-name").innerText = sortedList[2].name
 
 document.getElementById("fourth-rank").innerText = sortedList[3].score
 document.getElementById("fourth-name").innerText = sortedList[3].name
@@ -217,9 +220,9 @@ document.getElementById("fifth-name").innerText = sortedList[4].name
 document.getElementById("sixth-rank").innerText = sortedList[5].score
 document.getElementById("sixth-name").innerText = sortedList[5].name
 
-document.getElementById("first-rank-name").innerText = sortedList[0].name
-document.getElementById("second-rank-name").innerText = sortedList[1].name
-document.getElementById("third-rank-name").innerText = sortedList[2].name
+
+
+
 
 // userEmail = loggedInUser[0].email 
 for(i = 0; i < sortedList.length ; i++){
@@ -231,8 +234,3 @@ if(sortedList[i].email == loggedInUser[0].email){
 
 // let toggleButton = document.getElementById("toggle-button");
 
-function toggle(){
-  let element = document.getElementsByClassName("side-toggle-column")[0]
-  element.classList.toggle("toggle-style");
-
-}

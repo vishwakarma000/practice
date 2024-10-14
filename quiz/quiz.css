@@ -245,15 +245,18 @@ img{
 
 .rank-bottom{
     top: 39rem;
-    left: 35px;
+    /* left: 31px; */
     position: absolute;
     
+}
+.rank-bottom img{
+    width: 100%;
 }
 .rank-bottom #abc{
     position: absolute;
     top: 9rem;
-    width: 90%;
-    left: 5rem;
+    width: 80%;
+    left: 7rem;
 }
 .name-score-display{
     display: flex;
@@ -339,9 +342,6 @@ img{
 .right-container-user table,thead, td{
     border: 2px solid;
 }
-/* .right-container-user table{
-    
-} */
 
 .right-container-user thead, td{
     width: 15rem;
@@ -355,4 +355,36 @@ img{
 .right-container-user thead{
     background-color: gainsboro;
     text-align: center;
+}
+
+#table-head ul{
+    padding: 10px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+}
+#table-head ul li{
+list-style: none;
+
+}
+.question-box{
+    padding: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+    /* background-color: #909095; */
+}
+.question-box table{
+    margin: auto;
+    border: 1px solid;
+}
+.question-box thead{
+    border: 1px solid;
+}
+.question-box  ,tr, td{
+    border: none;
+}
+#question{
+    width: 100%;
 }
