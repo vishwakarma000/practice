@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="../quiz.css">
 </head>
-<body>
+<body onload="displayQuestion()">
     <header class="header">
         <div class="logo">
             <!-- <i class="bi bi-justify" id="toggle-button" onclick="toggle()"></i> -->
@@ -38,22 +38,17 @@
             </ul>
         </div>
         
-            <table>
+            <table id="question-table">
+               
                 <tr>
-                <tr>
-                    <td id="question-number">quesion1</td>
+                    <td id="question-number"></td>
                     <td id="question">
-                        what is the question aod jbudsn jbjbcn lo jwbdwhsb jsbcsb jbuhfa kugf kugedubad
-                    </td>
+                        
                 </tr>
-                </tr>
-            
-            
+                
             </table>
 
-
-
-
+            
     </div>
 
 <script src="admin.js"></script>

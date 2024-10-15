@@ -388,3 +388,9 @@ list-style: none;
 #question{
     width: 100%;
 }
+.question{
+    background-color: #909095;
+}
+/* #option1{
+    background-color: #f3bd00;
+} */
